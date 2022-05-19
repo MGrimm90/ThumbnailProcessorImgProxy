@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="thumbnail_processor_img_proxy.config"
+                 class="Shopware\Components\Plugin\Configuration\CachedReader" public="true">
+            <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
+            <argument type="string">%thumbnail_processor_img_proxy.plugin_name%</argument>
+        </service>
+
+        <service id="thumbnail_processor_img_proxy.services.thumbnail_url_template"
+                 class="ThumbnailProcessorImgProxy\Services\ThumbnailUrlTemplate"
+                 decorates="frosh_thumbnail_processor.services.thumbnail_url_template">
+            <argument type="service" id="thumbnail_processor_img_proxy.config"/>
+            <argument type="service" id="shopware_media.media_service"/>
+            <argument type="service" id="thumbnail_processor_img_proxy.services.thumbnail_url_template.inner"/>
+        </service>
+
+    </services>
+</container>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element>
+            <name>ImgProxyDomain</name>
+            <label>ImgProxy Domain</label>
+            <value>https://imgproxy.example.com</value>
+            <description>Domain where imgProxy is located, without trailing slash!</description>
+        </element>
+
+        <element type="text">
+            <name>ImgProxyKey</name>
+            <label>Imgproxy Key</label>
+            <label lang="de">Imgproxy Key</label>
+        </element>
+
+        <element type="text">
+            <name>ImgProxySalt</name>
+            <label>Imgproxy Salt</label>
+            <label lang="de">Imgproxy Salt</label>
+        </element>
+
+        <element type="select">
+            <name>ResizingType</name>
+            <label>Resizing type</label>
+            <description>Set resizing type. Available types are:
+                fit       - resizes the image while keeping aspect ratio to fit a given size ---
+                fill      - resizes the image while keeping aspect ratio to fill a given size and crops projecting parts ---
+                fill-down -the same as fill, but if the resized image is smaller than the requested size, imgproxy will crop the result to keep the requested aspect ratio ---
+                force     - resizes the image without keeping the aspect ratio ---
+                auto      - if both source and resulting dimensions have the same orientation (portrait or landscape), imgproxy will use fill. Otherwise, it will use fit
+            </description>
+            <store>
+                <option>
+                    <value>fit</value>
+                    <label>fit</label>
+                </option>
+                <option>
+                    <value>fill</value>
+                    <label>fill</label>
+                </option>
+                <option>
+                    <value>fill-down</value>
+                    <label>fill-down</label>
+                </option>
+                <option>
+                    <value>force</value>
+                    <label>force</label>
+                </option>
+                <option>
+                    <value>auto</value>
+                    <label>auto</label>
+                </option>
+            </store>
+        </element>
+
+        <element>
+            <name>Gravity</name>
+            <label>Gravity</label>
+            <value>sm</value>
+        </element>
+
+        <element type="boolean">
+            <name>Enlarge</name>
+            <label>Enlarge</label>
+            <value>0</value>
+        </element>
+
+        <element type="boolean">
+            <name>Extend</name>
+            <label>Extend</label>
+            <value>1</value>
+        </element>
+
+        <element type="number">
+            <name>SignatureSize</name>
+            <label>Signature Size</label>
+            <value>32</value>
+        </element>
+
+    </elements>
+</config>

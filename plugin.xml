@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label>ImgProxy integration for Thumbnail Processor</label>
+    <label lang="de">ImgProxy integration für Frosh Thumbnail Processor</label>
+
+    <version>1.0.0</version>
+    <copyright>M.Grimm</copyright>
+    <license>MIT</license>
+    <author>M. Grimm</author>
+
+    <description lang="en"><![CDATA[
+        <h2>Imgproxy extension for FroshThumbnailProcessor</h2>
+        <p>With the help of this plugin, a secured Imgproxy instance can be used to create article thumbnails.</p>
+        <p>Requires the plugin <a href="https://github.com/FriendsOfShopware/FroshThumbnailProcessor">FroshThumbnailProcessor</a> to be installed.</p>
+        ]]>
+        </description>
+    <description lang="de">
+        <![CDATA[
+            <h2>Imgproxy Erweiterung für FroshThumbnailProcessor</h2>
+            <p>Mithilfe dieses Plugins kann eine gesicherte Imgproxy Instanz zum erstellen der Thumbnails verwendet werden.</p>
+            <p>Setzt vorraus, dass das Plugin <a href="https://github.com/FriendsOfShopware/FroshThumbnailProcessor">FroshThumbnailProcessor</a> installiert ist.</p>
+        ]]>
+    </description>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erstveröffentlichung</changes>
+        <changes>initial release</changes>
+    </changelog>
+    <requiredPlugins>
+        <requiredPlugin pluginName="FroshThumbnailProcessor" minVersion="1.0.1" />
+    </requiredPlugins>
+</plugin>
